@@ -914,7 +914,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background: url("images/overlay.png");
+			/*background: url("images/overlay.png");*/
 		}
 
 		.image img {
@@ -1743,17 +1743,17 @@
 
 		}
 
-	body {
-		padding-top: 3em;
-	}
+	/*body {*/
+		/*padding-top: 3em;*/
+	/*}*/
 
-		@media screen and (max-width: 736px) {
+		/*@media screen and (max-width: 736px) {*/
 
-			body {
-				padding-top: 2.5em;
-			}
+			/*body {*/
+				/*padding-top: 2.5em;*/
+			/*}*/
 
-		}
+		/*}*/
 
 /* Main */
 
@@ -1843,19 +1843,19 @@
 				margin: 0;
 			}
 
-			.main.style2.left {
-				-moz-justify-content: -moz-flex-start;
-				-webkit-justify-content: -webkit-flex-start;
-				-ms-justify-content: -ms-flex-start;
-				justify-content: flex-start;
-			}
+			/*.main.style2.left {*/
+				/*-moz-justify-content: -moz-flex-start;*/
+				/*-webkit-justify-content: -webkit-flex-start;*/
+				/*-ms-justify-content: -ms-flex-start;*/
+				/*justify-content: flex-start;*/
+			/*}*/
 
-			.main.style2.right {
-				-moz-justify-content: -moz-flex-end;
-				-webkit-justify-content: -webkit-flex-end;
-				-ms-justify-content: -ms-flex-end;
-				justify-content: flex-end;
-			}
+			/*.main.style2.right {*/
+				/*-moz-justify-content: -moz-flex-end;*/
+				/*-webkit-justify-content: -webkit-flex-end;*/
+				/*-ms-justify-content: -ms-flex-end;*/
+				/*justify-content: flex-end;*/
+			/*}*/
 
 			.main.style2.inactive.left > .content {
 				-moz-transform: translateX(-100%);
@@ -1913,7 +1913,7 @@
 				}
 
 		body.is-touch .main {
-			/*background-attachment: scroll !important;*/
+			background-attachment: scroll !important;
 		}
 
 		@media screen and (max-width: 1920px) {
@@ -2093,73 +2093,39 @@
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/img_parallax.jpg");
-		/*background-size: 256px 256px, cover;*/
-		/*background-attachment: fixed, fixed;*/
-		/*background-position: top left, bottom center;*/
-		/*background-repeat: repeat, no-repeat;*/
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background: url("images/overlay.png"), url("../../images/main.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+		/*background-attachment: fixed;*/
+		/*background-position: center;*/
+		/*background-repeat: no-repeat;*/
+		/*background-size: cover;*/
 	}
 
 /* One */
 
 	#one {
 		background: url("images/overlay.png"), url("../../images/one.jpg");
-		/*background-size: 256px 256px, cover;*/
-		/*background-attachment: fixed, fixed;*/
-		/*background-position: top left, center center;*/
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+		/*background-attachment: fixed;*/
+		/*background-position: center;*/
+		/*background-repeat: no-repeat;*/
+		/*background-size: cover;*/
 	}
 
 /* Two */
 
 	#two {
 		background: url("images/overlay.png"), url("../../images/two.jpg");
-		/*background-size: 256px 256px, cover;*/
-		/*background-attachment: fixed, fixed;*/
-		/*background-position: top left, center center;*/
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+		/*background-attachment: fixed;*/
+		/*background-position: center;*/
+		/*background-repeat: no-repeat;*/
+		/*background-size: cover;*/
 	}
-
-/* Contact */
-
-	#contact {
-		overflow: hidden;
-		padding-bottom: 0;
-	}
-
-		#contact .box {
-			-moz-transition: -moz-transform 1s ease;
-			-webkit-transition: -webkit-transform 1s ease;
-			-ms-transition: -ms-transform 1s ease;
-			transition: transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			position: relative;
-		}
-
-		#contact.inactive .box {
-			-moz-transform: translateY(100%);
-			-webkit-transform: translateY(100%);
-			-ms-transform: translateY(100%);
-			transform: translateY(100%);
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#contact .box {
-				padding-bottom: 2em;
-			}
-
-		}
