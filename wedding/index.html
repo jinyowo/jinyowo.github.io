@@ -9,14 +9,21 @@
 	<title>Big Picture by HTML5 UP</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<!--[if lte IE 8]>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="title"/>
+    <meta property="og:url" content="http://jinyowo.github.io"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg"/>
+    <meta property="og:image:type" content="image/*">
+    <!--[if lte IE 8]>
 	<script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css"/>
 	<!--[if lte IE 8]>
 	<link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
 	<!--[if lte IE 9]>
 	<link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kKwW3L_8ThCYgoDj7aiU&submodules=geocoder"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kKwW3L_8ThCYgoDj7aiU&submodules=geocoder"></script>
+    <script type="text/javascript" src="//developers.band.us/js/share/band-button.js?v=25042018"></script>
 </head>
 <body>
 
@@ -166,11 +173,18 @@
 	<!-- Icons -->
 	<ul class="actions">
 		<li><a href="#" class="icon fa-facebook"><span class="label">Line</span></a></li>
-		<li><a href="#" class="icon fa-naverband"><span class="label">Band</span></a></li>
-		<li><a href="#" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
-		<li><a href="#" class="icon fa-kakaostory"><span class="label">Kakaostro</span></a></li>
+		<li><a href="#" class="icon fa-naverband"><span class="label">Band</span>
+            <script type="text/javascript">
+                new ShareBand.makeButton({"lang":"ko-KR","type":"d","text":"","withUrl":true});
+            </script>
+        </a></li>
+		<li><a id="kakao-share-btn" href="javascript:;" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
+		<li><a id="kakaostory-share-btn" href="javascript:shareStory()" class="icon"><span class="label">Kakaostory</span></a></li>
 	</ul>
+    <span>
 
+
+    </span>
 	<!-- Menu -->
 	<ul class="menu">
 		<li>&copy; HJ studio</li>
@@ -189,6 +203,7 @@
 <!--[if lte IE 8]>
 <script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/sns.js"></script>
 <script>
 	var map = new naver.maps.Map('map');
 	var myaddress = '언주로 126길 23';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
@@ -224,6 +239,17 @@
 			content: '<h5>더그레이스켈리 강남</h5>'
 		});
 	});
+
+	// var sns = new SnsShare();
+
+    Kakao.init('e0a3da945d985a84682babc289bbc413');
+    function shareStory() {
+        Kakao.Story.open({
+            url: 'http://blog.kakaocorp.co.kr/390',
+            text: '카카오검색에서 카카오스토리를! #카카오스토리 #카카오검색 :)'
+        });
+    }
+
 </script>
 
 </body>
