@@ -151,14 +151,41 @@
 	</div>
 </section>
 
-<section class="main style3 primary">
-	<div class="content">
-		<header>
-			<h2>Location</h2>
-		</header>
-		<div id="map" style="width:100%;height:500px;"></div>
-	</div>
-</section>
+			<section class="main style3 primary fullscreen">
+				<div class="content">
+					<header>
+						<h2>Location</h2>
+					</header>
+					<div id="map" style="width:100%;height:50%;"></div>
+					<div>
+						<h5>지하철</h5>
+						<ul>
+							<li>강남구청역(2,7호선) 2번 출구에서 셔틀버스 이용</li>
+						</ul>
+						<h5>버스</h5>
+						<ul>
+							<li>401번, 3414번 강남구청역 하차</li>
+							<li>351번, 472번, 4412번 강남보건소 하차</li>
+						</ul>
+						<h5>자가용</h5>
+						<ul>
+							<li>강남구 논현동 241-3 SK허브블루 지하주차장 이용(7호선 강남구청역 근처)</li>
+							<li>내리신 후 강남구청역 2번출구 셔틀버스 이용</li>
+						</ul>
+						<h5>[당부의 말씀]</h5>
+						<ul>
+							<li>일반웨딩홀이 아닌 단독 주택을 개조한 하우스웨딩홀로 주차가 어렵습니다.</li>
+							<li>셔틀버스를 준비하였으니 가급적 대중교통을 이용 부탁드립니다.</li>
+						</ul>
+						<h5>셔틀버스 운행시간</h5>
+						<h5>(강남구청역 2번 출구 < = > 더그레이스켈리)</h5>
+						<ul>
+							<li>10:30~12:00(90분간) / 10분 간격 운행</li>
+							<li>13:00~14:00(60분간) / 10분 간격 운행</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 
 <!-- Footer -->
 <footer id="footer">
@@ -179,52 +206,60 @@
 
 </footer>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.poptrox.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
-<script>
-	var map = new naver.maps.Map('map');
-	var myaddress = '언주로 126길 23';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
-	naver.maps.Service.geocode({address: myaddress}, function (status, response) {
-		if (status !== naver.maps.Service.Status.OK) {
-			return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
-		}
-		var result = response.result;
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+                var myaddr = new naver.maps.LatLng(37.5140909, 127.0372836);
 
-		console.log(response.result);
-		// 검색 결과 갯수: result.total
-		// 첫번째 결과 결과 주소: result.items[0].address
-		// 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
-		var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
-		map.setCenter(myaddr); // 검색된 좌표로 지도 이동
-		// 마커 표시
-		var marker = new naver.maps.Marker({
-			position: myaddr,
-			map: map,
-			title: "더그레이스켈리 강남"
-		});
+				var map = new naver.maps.Map('map', {
+				    center: myaddr,
+					zoom: 12,
+					minZoom: 8,
+					zoomControl: true,
+                    zoomControlOptions: { //줌 컨트롤의 옵션
+                        position: naver.maps.Position.TOP_RIGHT
+                    }
+				});
+                // 마커 표시
+                var marker = new naver.maps.Marker({
+                    position: myaddr,
+                    map: map,
+                    title: "더그레이스켈리 강남"
+                });
 
-		// 마커 클릭 이벤트 처리
-		naver.maps.Event.addListener(marker, "click", function (e) {
-			if (infowindow.getMap()) {
-				infowindow.close();
-			} else {
-				infowindow.open(map, marker);
-			}
-		});
-		// 마크 클릭시 인포윈도우 오픈
-		var infowindow = new naver.maps.InfoWindow({
-			content: '<h5>더그레이스켈리 강남</h5>'
-		});
-	});
-</script>
+                // 마커 클릭 이벤트 처리
+                naver.maps.Event.addListener(marker, "click", function() {
+                    if (infowindow.getMap()) {
+                        infowindow.close();
+                    } else {
+                        infowindow.open(map, marker);
+                    }
+                });
+                // 마크 클릭시 인포윈도우 오픈
+                var infowindow = new naver.maps.InfoWindow({
+                    content: '<h5>더그레이스켈리 강남</h5>'
+                });
+                //
+                // var myaddress = '언주로 126길 23';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+                // naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+					// if (status !== naver.maps.Service.Status.OK) {
+					// 	return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+					// }
+					// var result = response.result;\
+					// console.log(response.result);
+					// // 검색 결과 갯수: result.total
+					// // 첫번째 결과 결과 주소: result.items[0].address
+					// // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
 
-</body>
+                <!--});-->
+			</script>
+
+	</body>
 </html>
