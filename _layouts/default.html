@@ -41,9 +41,10 @@
 
     function shareLine() {
         var url = 'http://line.me/R/msg/text/?';
-        var title = '조성훈&허진 결혼식에 초대합니다.';
+        var title = '조성훈&허진 결혼식에 초대합니다.\n';
+        var link = 'http://jinyowo.github.io';
 
-        url += encodeURIComponent(title);
+        url += encodeURIComponent(title + link);
 
         window.open(url,  'Line', '');
     }
