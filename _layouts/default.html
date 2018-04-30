@@ -2,10 +2,52 @@
 <html>
 <head>
 	<title>Text</title>
-	<meta content="charset=UTF-8">
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!-- og -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="조성훈&허진 결혼식에 초대합니다."/>
+    <meta property="og:url" content="http://jinyowo.github.io"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg"/>
+    <meta property="og:image:type" content="image/*">
+    <!-- sns -->
+    <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<h1>text</h1>
+<h1>SNS 공유하기 테스트</h1>
+
+<div>
+    <ul>
+        <li><a href="javascript:shareLine();" class="icon fa-facebook"><span class="label">Line</span></a></li>
+        <li><a id="kakao-share-btn" href="javascript:;" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
+    </ul>
+</div>
+<script>
+    Kakao.init('e0a3da945d985a84682babc289bbc413');
+
+    Kakao.Link.createTalkLinkButton({
+        container: '#kakao-share-btn',
+        label: '조성훈&허진 결혼식에 초대합니다.',
+        image: {
+            src: 'https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg',
+            width: '800',
+            height: '533'
+        },
+        webButton: {
+            text: '모바일 초대장 연결',
+            url: 'http://jinyowo.github.io'
+        }
+    });
+
+    function shareLine() {
+        var url = 'http://line.me/R/msg/text/?';
+        var title = '조성훈&허진 결혼식에 초대합니다.';
+
+        url += encodeURIComponent(title);
+
+        window.open(url,  'Line', '');
+    }
+
+</script>
 </body>
 </html>
