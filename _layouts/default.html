@@ -12,43 +12,179 @@
     <meta property="og:image:type" content="image/*">
     <!-- sns -->
     <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <style>
+        h1 {
+            color: red;
+        }
+
+
+        /* Tooptip */
+        .tooltipped {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltipped:after {
+            position: absolute;
+            z-index: 1000000;
+            display: inline-block;
+            padding: 5px 8px;
+            font: normal normal 11px/1.5 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: break-word;
+            white-space: pre;
+            pointer-events: none;
+            content: attr(aria-label);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 3px;
+            -webkit-font-smoothing: subpixel-antialiased
+        }
+
+        .tooltipped:before {
+            position: absolute;
+            z-index: 1000001;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            color: rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+            content: "";
+            border: 5px solid transparent
+        }
+
+        .tooltipped:hover:before, .tooltipped:hover:after, .tooltipped:active:before, .tooltipped:active:after, .tooltipped:focus:before, .tooltipped:focus:after {
+            display: inline-block;
+            text-decoration: none
+        }
+
+        .tooltipped-s:after, .tooltipped-se:after, .tooltipped-sw:after {
+            top: 100%;
+            right: 50%;
+            margin-top: 5px
+        }
+
+        .tooltipped-s:before, .tooltipped-se:before, .tooltipped-sw:before {
+            top: auto;
+            right: 50%;
+            bottom: -5px;
+            margin-right: -5px;
+            border-bottom-color: rgba(0, 0, 0, 0.8)
+        }
+
+        .tooltipped-se:after {
+            right: auto;
+            left: 50%;
+            margin-left: -15px
+        }
+
+        .tooltipped-sw:after {
+            margin-right: -15px
+        }
+
+        .tooltipped-n:after, .tooltipped-ne:after, .tooltipped-nw:after {
+            right: 50%;
+            bottom: 100%;
+            margin-bottom: 5px
+        }
+
+        .tooltipped-n:before, .tooltipped-ne:before, .tooltipped-nw:before {
+            top: -5px;
+            right: 50%;
+            bottom: auto;
+            margin-right: -5px;
+            border-top-color: rgba(0, 0, 0, 0.8)
+        }
+
+        .tooltipped-ne:after {
+            right: auto;
+            left: 50%;
+            margin-left: -15px
+        }
+
+        .tooltipped-nw:after {
+            margin-right: -15px
+        }
+
+        .tooltipped-s:after, .tooltipped-n:after {
+            -webkit-transform: translateX(50%);
+            -ms-transform: translateX(50%);
+            transform: translateX(50%)
+        }
+
+        .tooltipped-w:after {
+            right: 100%;
+            bottom: 50%;
+            margin-right: 5px;
+            -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+            transform: translateY(50%)
+        }
+
+        .tooltipped-w:before {
+            top: 50%;
+            bottom: 50%;
+            left: -5px;
+            margin-top: -5px;
+            border-left-color: rgba(0, 0, 0, 0.8)
+        }
+
+        .tooltipped-e:after {
+            bottom: 50%;
+            left: 100%;
+            margin-left: 5px;
+            -webkit-transform: translateY(50%);
+            -ms-transform: translateY(50%);
+            transform: translateY(50%)
+        }
+
+        .tooltipped-e:before {
+            top: 50%;
+            right: -5px;
+            bottom: 50%;
+            margin-top: -5px;
+            border-right-color: rgba(0, 0, 0, 0.8)
+        }
+
+    </style>
 </head>
 <body>
 <h1>SNS 공유하기 테스트</h1>
 
 <div>
     <ul>
-        <li><a href="javascript:shareLine();" class="icon fa-facebook"><span class="label">Line</span></a></li>
-        <li><a id="kakao-share-btn" href="javascript:;" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
+        <li><a id="line-share-btn" href="#" class="icon fa-facebook"><span class="label">Line</span></a></li>
+        <li><a id="kakao-share-btn" href="#" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
+        <li><a id="url-copy-btn" href="#" class="icon fa-sms"><span class="label">copy</span></a></li>
     </ul>
+    <span class="tooltip-area" data-role="tooltip"></span>
 </div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/clipboard.min.js"></script>
+<script src="../assets/js/sns.js"></script>
 <script>
-    Kakao.init('e0a3da945d985a84682babc289bbc413');
-
-    Kakao.Link.createTalkLinkButton({
-        container: '#kakao-share-btn',
-        label: '조성훈&허진 결혼식에 초대합니다.',
-        image: {
-            src: 'https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg',
-            width: '800',
-            height: '533'
+    var snsInfo = {
+        title: '[모바일 초대장] ',
+        content: '조성훈&허진 결혼식에 초대합니다.',
+        link: 'http://jinyowo.github.io',
+        imgSrc: 'https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg',
+        kakao: {
+            id: '#kakao-share-btn',
+            key: 'e0a3da945d985a84682babc289bbc413'
         },
-        webButton: {
-            text: '모바일 초대장 연결',
-            url: 'http://jinyowo.github.io'
+        line: {
+            id: '#line-share-btn'
+        },
+        copy: {
+            id: '#url-copy-btn'
         }
-    });
+    };
 
-    function shareLine() {
-        var url = 'http://line.me/R/msg/text/?';
-        var title = '조성훈&허진 결혼식에 초대합니다.\n';
-        var link = 'http://jinyowo.github.io';
-
-        url += encodeURIComponent(title + link);
-
-        window.open(url,  'Line', '');
-    }
-
+    new SnsShare(snsInfo);
 </script>
 </body>
 </html>
