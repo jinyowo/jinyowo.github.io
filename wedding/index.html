@@ -113,6 +113,44 @@
         <a href="#work" class="button style2 down anchored">Next</a>
     </section>
 
+    <section class="main style3 primary">
+        <div class="content">
+            <header>
+                <h2>Location</h2>
+            </header>
+            <div id="map" style="width:100%;"></div>
+            <br>
+            <div>
+                <h5>지하철</h5>
+                <ul>
+                    <li>강남구청역(분당선,7호선) 2번 출구에서 셔틀버스 이용</li>
+                </ul>
+                <h5>버스</h5>
+                <ul>
+                    <li>401번, 3414번 강남구청역 하차</li>
+                    <li>351번, 472번, 4412번 강남보건소 하차</li>
+                    <li>하차 후 강남구청역 2번 출구에서 셔틀버스 이용</li>
+                </ul>
+                <h5>자가용</h5>
+                <ul>
+                    <li>강남구 논현동 241-3 SK허브블루 지하주차장 이용(7호선 강남구청역 근처)</li>
+                    <li>하차 후 강남구청역 2번출구 셔틀버스 이용</li>
+                </ul>
+                <h5>[당부의 말씀]</h5>
+                <ul>
+                    <li>일반웨딩홀이 아닌 단독 주택을 개조한 하우스웨딩홀로 주차가 어렵습니다.</li>
+                    <li>셔틀버스를 준비하였으니 가급적 대중교통을 이용 부탁드립니다.</li>
+                </ul>
+                <h5>셔틀버스 운행시간</h5>
+                <h5>(강남구청역 2번 출구 < > 더그레이스켈리)</h5>
+                <ul>
+                    <li>10:30~12:00(90분간) / 10분 간격 운행</li>
+                    <li>13:00~14:00(60분간) / 10분 간격 운행</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Work -->
     <section id="work" class="main style3 primary">
         <div class="content">
@@ -159,44 +197,6 @@
         </div>
     </section>
 
-    <section class="main style3 primary fullscreen">
-        <div class="content">
-            <header>
-                <h2>Location</h2>
-            </header>
-            <div id="map" style="width:100%;height:50%;"></div>
-            <br>
-            <div>
-                <h5>지하철</h5>
-                <ul>
-                    <li>강남구청역(2,7호선) 2번 출구에서 셔틀버스 이용</li>
-                </ul>
-                <h5>버스</h5>
-                <ul>
-                    <li>401번, 3414번 강남구청역 하차</li>
-                    <li>351번, 472번, 4412번 강남보건소 하차</li>
-                    <li>하차 후 강남구청역 2번 출구에서 셔틀버스 이용</li>
-                </ul>
-                <h5>자가용</h5>
-                <ul>
-                    <li>강남구 논현동 241-3 SK허브블루 지하주차장 이용(7호선 강남구청역 근처)</li>
-                    <li>하차 후 강남구청역 2번출구 셔틀버스 이용</li>
-                </ul>
-                <h5>[당부의 말씀]</h5>
-                <ul>
-                    <li>일반웨딩홀이 아닌 단독 주택을 개조한 하우스웨딩홀로 주차가 어렵습니다.</li>
-                    <li>셔틀버스를 준비하였으니 가급적 대중교통을 이용 부탁드립니다.</li>
-                </ul>
-                <h5>셔틀버스 운행시간</h5>
-                <h5>(강남구청역 2번 출구 < > 더그레이스켈리)</h5>
-                <ul>
-                    <li>10:30~12:00(90분간) / 10분 간격 운행</li>
-                    <li>13:00~14:00(60분간) / 10분 간격 운행</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer id="footer">
 
@@ -206,6 +206,7 @@
             <li><a href="#" class="icon fa-naverband"><span class="label">Band</span></a></li>
             <li><a href="#" class="icon fa-kakaotalk"><span class="label">KakaoTalk</span></a></li>
             <li><a href="#" class="icon fa-kakaostory"><span class="label">Kakaostro</span></a></li>
+            <li data-role="tooltip"></li>
         </ul>
 
         <!-- Menu -->
@@ -213,6 +214,10 @@
             <li>&copy; HJ studio</li>
             <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
         </ul>
+
+        <div id="back-top" class="back-top">
+            <span class="blind">맨 위로 가기</span>
+        </div>
 
     </footer>
 
@@ -225,6 +230,8 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+    <script src="../assets/js/clipboard.min.js"></script>
+    <script src="../assets/js/sns.js"></script>
     <script>
         // 모바일 에이전트 구분
         var isMobile = {
@@ -313,6 +320,33 @@
             // // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
 
         <!--});-->
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
+
+        var snsInfo = {
+            title: '[모바일 초대장] ',
+            content: '조성훈&허진 결혼식에 초대합니다.',
+            link: 'http://jinyowo.github.io',
+            imgSrc: 'https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg',
+            kakao: {
+                id: '#kakao-share-btn',
+                key: 'e0a3da945d985a84682babc289bbc413'
+            },
+            line: {
+                id: '#line-share-btn'
+            },
+            copy: {
+                id: '#url-copy-btn'
+            }
+        };
+
+        new SnsShare(snsInfo);
+
     </script>
 	</body>
 </html>

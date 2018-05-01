@@ -83,6 +83,20 @@
 			transition: none !important;
 		}
 
+
+.back-top {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    background: url("../../images/back-to-top.png") no-repeat;
+}
+
+span.blind {
+    display: none;
+}
 /* Spinner */
 
 	@-moz-keyframes spinner-rotate {
