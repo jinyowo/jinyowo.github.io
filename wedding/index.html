@@ -20,97 +20,42 @@
     </head>
     <body>
 
-    <!-- Header -->
-    <!--<header id="header">-->
-    <!--<h1></h1>-->
-    <!--<nav>-->
-    <!--<ul>-->
-    <!--<li><a href="#intro">Intro</a></li>-->
-    <!--<li><a href="#one">What I Do</a></li>-->
-    <!--<li><a href="#two">Who I Am</a></li>-->
-    <!--<li><a href="#work">My Work</a></li>-->
-    <!--<li><a href="#contact">Contact</a></li>-->
-    <!--</ul>-->
-    <!--</nav>-->
-    <!--</header>-->
-
     <!-- Intro -->
     <section id="intro" class="main style1 dark fullscreen">
         <div class="content">
-            <header>
-                <h2>6 / 2</h2>
-            </header>
-            <div>
-                <span>조성훈 & 허진</span>
-                <span>결혼합니다.</span>
+            <div class="title">
+                <h1>성훈 <span class="icon fa-heart"></span> 진 결혼합니다</h1>
             </div>
-            <div>
-                <span>2018. 06. 02 SAT  11:30AM</span>
+            <div class="infomation">
+                <span>2018. 06. 02 토요일 11:30AM</span>
+                <br>
                 <span>더 그레이스켈리 강남</span>
             </div>
-            <footer>
-                <a href="#one" class="button style2 down">More</a>
-            </footer>
+            <a href="#one" class="more icon fa-arrow-circle-down"></a>
         </div>
     </section>
 
-    <!-- One -->
-    <section id="one" class="main style1 right dark fullscreen">
-        <div class="content box style2">
-            <header>
-                <h5>평생을 같이하고 싶은 사람을 만났습니다</h5>
-            </header>
-            <p>
-                서로 아껴주고 이해하며 사랑 베풀며 살겠습니다.
-                저희 약속 위에 따뜻한 격려로 축복해주셔서 힘찬 출발의 디딤이 되어주십시오.
-            </p>
+    <section id="one" class="main style2 fullscreen">
+        <div class="content point-img1">
+            <div class="groom"></div>
+            <div class="heart"></div>
+            <div class="bride"></div>
         </div>
-        <a href="#two" class="button style2 down anchored">Next</a>
-    </section>
-
-    <!-- Two -->
-    <section id="two" class="main style1 left dark fullscreen">
-        <div class="content box style2">
-            <header>
-                <p><strong>강상선 권희순</strong>의 아들 <strong>성훈</strong></p>
-                <p><strong>허민구 김영미</strong>의 딸 <strong>진</strong></p>
-            </header>
-            <!--
-            <p>신랑 <span>조성훈</span></p>
-            <p>신부 <span>허 진</span></p>
-            <ul>
-                <li>
-                    <span>신랑측 혼주</span>
-                    <ul>
-                        <li>
-                            <span>아버지</span>
-                            <span>강상선</span>
-                        </li>
-                        <li>
-                            <span>어머니</span>
-                            <span>권희순</span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <span>신부측 혼주</span>
-                    <ul>
-                        <li>
-                            <span>아버지</span>
-                            <span>허민구</span>
-                        </li>
-                        <li>
-                            <span>어머니</span>
-                            <span>김영미</span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            -->
+        <div class="content main-content">
+            평생을 같이하고 싶은 사람을 만났습니다<br>
+            서로 아껴주고 이해하며<br>
+            사랑 베풀며 살겠습니다.<br>
+            저희 약속 위에 따뜻한 격려로 축복해<br>
+            주셔서 힘찬 출발의 디딤이 되어주십시오.
         </div>
-        <a href="#work" class="button style2 down anchored">Next</a>
+        <div class="content parent-info">
+            <div class="deco">
+                <span class="icon fa-pagelines left"></span>
+                <span class="icon fa-pagelines right"></span>
+            </div>
+            <div class="groom-parent"><strong>강상선 권희순</strong>의 아들 <strong>성훈</strong></div>
+            <div class="bride-parent"><strong>허민구 김영미</strong>의 딸 <strong>진</strong></div>
+        </div>
     </section>
 
     <section class="main style3 primary">
@@ -118,9 +63,9 @@
             <header>
                 <h2>Location</h2>
             </header>
-            <div id="map" style="width:100%;"></div>
+            <div id="map" style="width:100%;height:20em"></div>
             <br>
-            <div>
+            <div class="map-info">
                 <h5>지하철</h5>
                 <ul>
                     <li>강남구청역(분당선,7호선) 2번 출구에서 셔틀버스 이용</li>
@@ -215,7 +160,7 @@
             <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
         </ul>
 
-        <div id="back-top" class="back-top">
+        <div id="back-top" class="back-top icon fa-chevron-circle-up">
             <span class="blind">맨 위로 가기</span>
         </div>
 
@@ -321,7 +266,7 @@
 
         <!--});-->
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
+            if ($(this).scrollTop() > window.innerHeight) {
                 $('#back-top').fadeIn();
             } else {
                 $('#back-top').fadeOut();

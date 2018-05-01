@@ -30,6 +30,12 @@
             }, 100);
         });
 
+        $('.back-top').on('click', function (e) {
+            e.preventDefault();
+
+            $('html, body').animate({scrollTop: 0}, 400);
+        });
+
         // Touch mode.
         skel.on('change', function () {
 
@@ -199,33 +205,38 @@
 
         }
 
+        $('a[href^="#"]').scrolly({
+            speed: 1000,
+            offset: $header.outerHeight() - 1
+        });
+
         // // Events.
         // 	var resizeTimeout, resizeScrollTimeout;
-        //
+		//
         // 	$window
         // 		.resize(function() {
-        //
+		//
         // 			// Disable animations/transitions.
         // 				$body.addClass('is-resizing');
-        //
+		//
         // 			window.clearTimeout(resizeTimeout);
-        //
+		//
         // 			resizeTimeout = window.setTimeout(function() {
-        //
+		//
         // 				// Update scrolly links.
         // 					$('a[href^="#"]').scrolly({
         // 						speed: 1500,
         // 						offset: $header.outerHeight() - 1
         // 					});
-        //
+		//
         // 				// Re-enable animations/transitions.
         // 					window.setTimeout(function() {
         // 						$body.removeClass('is-resizing');
         // 						$window.trigger('scroll');
         // 					}, 0);
-        //
+		//
         // 			}, 100);
-        //
+		//
         // 		})
         // 		.load(function() {
         // 			$window.trigger('resize');
