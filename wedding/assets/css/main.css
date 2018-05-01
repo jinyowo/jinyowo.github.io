@@ -1724,9 +1724,9 @@ span.blind {
                     background-image: url("images/dark-arrow.svg");
                 }
 
-		/*body.is-touch .main {*/
-			/*background-attachment: scroll !important;*/
-		/*}*/
+		body.is-touch .main {
+			background-attachment: scroll !important;
+		}
 
 		@media screen and (max-width: 1920px) {
 
@@ -1928,13 +1928,9 @@ span.blind {
 	#intro {
 		background: url("images/overlay.png"), url("../../images/main.jpg");
 		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
-		/*background-attachment: fixed;*/
-		/*background-position: center;*/
-		/*background-repeat: no-repeat;*/
-		/*background-size: cover;*/
+		background-attachment: fixed;
 	}
 
     #intro .more:before {
@@ -1973,14 +1969,11 @@ span.blind {
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
-		/*background-attachment: fixed;*/
-		/*background-position: center;*/
-		/*background-repeat: no-repeat;*/
-		/*background-size: cover;*/
 	}
 
     #one .point-img1 {
-
+        text-align: center;
+        padding: 1em 0;
     }
 
     #one .point-img1 div{
@@ -2006,10 +1999,9 @@ span.blind {
     }
 
     #one .parent-info {
-        padding: 3em;
+        padding: 2em;
         text-align: unset;
         background-color: #fff;
-        margin: 0;
         font-size: 1.2em;
     }
 
@@ -2038,8 +2030,28 @@ span.blind {
     #one .parent-info .bride-parent {
         padding: 0 1.25em;
     }
+
+    #thankyou {
+        text-align: center;
+        margin: 0 10px;
+    }
+    #thankyou .content {
+        padding: 0.5em;
+        border-top: medium double #000;
+        border-bottom: medium double #000;
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
     .map-info {
         text-align: start;
+    }
+
+    .sns-share {
+
+    }
+
+    .sns-share .share-line {
+        background: url("./images/");
     }
 
 .tooltipped {
