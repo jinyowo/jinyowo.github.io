@@ -1767,7 +1767,7 @@ span.blind {
 				}
 
 			.main.style2 {
-				padding: 5em 0px;
+				padding: 0em 0px;
 			}
 
 				.main.style2:before, .main.style2:after {
@@ -2003,6 +2003,10 @@ span.blind {
         text-align: unset;
         background-color: #fff;
         font-size: 1.2em;
+    }
+
+    #one .deco {
+        text-align: start;
     }
 
     #one .parent-info .deco .icon:before {
