@@ -2029,6 +2029,9 @@ span.blind {
     #one .parent-info .groom-parent,
     #one .parent-info .bride-parent {
         padding: 0 1.25em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 
     #thankyou {
