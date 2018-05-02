@@ -1404,7 +1404,7 @@ body.is-touch .main {
 }
 
 #content .main-content {
-    padding: 3em;
+    padding: 2.5em;
     margin-bottom: 0em;
     background-color: #f7f7f7;
 }
@@ -1514,6 +1514,20 @@ body.is-touch .main {
     font-size: 1.5em;
 }
 
+@media screen and (max-width: 359px) {
+    #intro .title {
+        font-size: 1.8em;
+    }
+
+    #content .main-content {
+        font-size: 93%;
+        padding: 1.5em;
+    }
+
+    #content .parent-info {
+        padding: 1em;
+    }
+}
 
 /* Footer */
 #footer {
