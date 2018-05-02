@@ -1383,6 +1383,7 @@ body.is-touch .main {
 #content .point-img1 {
     text-align: center;
     padding: 1em 0;
+    margin-top: 6em;
 }
 
 #content .point-img1 div {
@@ -1409,7 +1410,7 @@ body.is-touch .main {
 
 #content .main-content {
     padding: 3em;
-    margin-bottom: 10em;
+    margin-bottom: 0em;
     background-color: #f7f7f7;
 }
 
