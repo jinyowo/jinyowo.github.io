@@ -1456,6 +1456,12 @@ body.is-touch .main {
 }
 
 /* location */
+#location {
+    background-color: #f7f7f7;
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+}
 #location .map-info {
     text-align: start;
 }
