@@ -1,5 +1,3 @@
-console.log('sns js import ');
-
 var SnsShare = function (info) {
     this._kakaoBtnId = info.kakao.id;
     this._kakaoKey = info.kakao.key;

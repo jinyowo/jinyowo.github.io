@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: NanumSquareRound;
-    src: url(../assets/fonts/NanumSquareRoundR.ttf) format('truetype');
+    src: url(../fonts/NanumSquareRoundR.ttf) format('truetype');
 }
 
 /* Reset */
@@ -1333,7 +1333,7 @@ body.is-touch .main {
 
 /* Intro */
 #intro {
-    background: url("images/overlay.png"), url("../assets/images/main.jpg");
+    background: url("images/overlay.png"), url("../images/main.jpg");
     background-size: 256px 256px, cover;
     background-position: top left, bottom center;
     background-repeat: repeat, no-repeat;
@@ -1393,15 +1393,15 @@ body.is-touch .main {
 }
 
 #content .point-img1 .groom {
-    background: url("../assets/images/groom.png");
+    background: url("../images/groom.png");
 }
 
 #content .point-img1 .bride {
-    background: url("../assets/images/bride.png");
+    background: url("../images/bride.png");
 }
 
 #content .point-img1 .heart {
-    background: url("../assets/images/heart1.png");
+    background: url("../images/heart1.png");
 }
 
 #content .main-content {
