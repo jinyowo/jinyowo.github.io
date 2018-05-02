@@ -1425,6 +1425,7 @@ body.is-touch .main {
     padding: 0 1.25em;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -1473,44 +1474,32 @@ body.is-touch .main {
 
 /* thankyou */
 #thankyou {
+    background-color: #f7f7f7;
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
     text-align: center;
     margin: 0 10px;
 }
 
-/*#thankyou ul.share {*/
-    /*position: absolute;*/
-    /*left: 1em;*/
-    /*top: 0.25em;*/
-    /*height: 5em;*/
-    /*line-height: 5em;*/
-    /*margin: 0;*/
-/*}*/
+#thankyou ul.share {
+    text-align: start;
+    margin: 3em 0;
+}
 
 #thankyou ul.share li {
-    display: inline-block;
+    color: #000;
     font-size: 1.25em;
     margin: 0 10px;
 }
 
 #thankyou ul.share li a {
     display: inline-block;
+}
+
+#thankyou ul.share li a img {
     height: 30px;
     width: 30px;
-}
-
-#thankyou ul.share .line {
-    background: url("../../images/line.png");
-    background-size: cover;
-}
-
-#thankyou ul.share .kakao {
-    background: url("../../images/kakaolink_btn_medium.png");
-    background-size: cover;
-}
-
-#thankyou ul.share .copy {
-    background: url("../../images/copy-color.png");
-    background-size: cover;
 }
 
 #thankyou .thank {

@@ -7,20 +7,16 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="성훈 & 진 결혼식에 초대합니다"/>
     <meta property="og:url" content="http://jinyowo.github.io"/>
-    <meta property="og:image"
-          content="https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/jinyowo/jinyowo.github.io/master/wedding/images/main.jpg"/>
     <meta property="og:image:type" content="image/*">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="shortcut icon" href="images/favicon%20(1).ico">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
     <!-- lib -->
     <script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script type="text/javascript"
-            src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kKwW3L_8ThCYgoDj7aiU&submodules=geocoder"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=kKwW3L_8ThCYgoDj7aiU&submodules=geocoder"></script>
 </head>
 <body>
 
@@ -73,7 +69,7 @@
 <section id="location" class="main style3 primary">
     <div class="content">
         <header>
-            <h2>Location</h2>
+            <h2>오시는 길 / Location</h2>
         </header>
         <div id="map" style="width:100%;height:20em"></div>
         <br>
@@ -112,7 +108,7 @@
 <section id="gallery" class="main style3 primary">
     <div class="content">
         <header>
-            <h2>Gallery</h2>
+            <h2>우리의 사진 / Gallery</h2>
         </header>
 
         <!-- Gallery  -->
@@ -150,9 +146,18 @@
     <div class="content">
         <!-- Icons -->
         <ul class="share">
-            <li><a id="line-share-btn" href="#" class="icon line"><span class="label">Line</span></a></li>
-            <li><a id="kakao-share-btn" href="#" class="icon kakao"><span class="label">KakaoTalk</span></a></li>
-            <li><a id="url-copy-btn" href="#" class="icon copy"><span class="label">copy</span></a></li>
+            <li><a id="line-share-btn" href="#" class="icon line">
+                <img src="./images/line.png" alt="line으로 공유하기">
+                <span>Line으로 공유하기</span>
+            </a></li>
+            <li><a id="kakao-share-btn" href="#" class="icon kakao">
+                <img src="./images/kakaolink_btn_medium.png" alt="KakaoTalk으로 공유하기">
+                <span>KakaoTalk으로 공유하기</span>
+            </a></li>
+            <li><a id="url-copy-btn" href="#" class="icon copy">
+                <img src="./images/copy-color.png" alt="주소 복사하기">
+                <span>주소 복사하기</span>
+            </a></li>
         </ul>
         <span class="tooltip-area" data-role="tooltip"></span>
         <div class="thank">
@@ -181,8 +186,6 @@
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
 <script src="../assets/js/clipboard.min.js"></script>
 <script src="../assets/js/sns.js"></script>
