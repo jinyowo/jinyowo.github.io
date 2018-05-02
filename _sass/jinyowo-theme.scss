@@ -1378,6 +1378,7 @@ body.is-touch .main {
 #content .point-img1 {
     text-align: center;
     padding: 1em 0;
+    margin-top: 6em;
 }
 
 #content .point-img1 div {
@@ -1404,7 +1405,7 @@ body.is-touch .main {
 
 #content .main-content {
     padding: 3em;
-    margin-bottom: 10em;
+    margin-bottom: 0em;
     background-color: #f7f7f7;
 }
 
@@ -1467,42 +1468,50 @@ body.is-touch .main {
     font-size: 110%;
 }
 
-/* thankyou */
-#thankyou {
+/* sns */
+#sns {
     background-color: #f7f7f7;
     background-size: 256px 256px, cover;
     background-attachment: fixed, fixed;
     background-position: top left, center center;
-    text-align: center;
-    margin: 0 10px;
 }
 
-#thankyou ul.share {
+#sns ul.share {
     text-align: start;
     margin: 3em 0;
 }
 
-#thankyou ul.share li {
+#sns ul.share li {
+    vertical-align: middle;
     color: #000;
     font-size: 1.25em;
     margin: 0 10px;
 }
 
-#thankyou ul.share li a {
+#sns ul.share li a {
+    vertical-align: middle;
     display: inline-block;
+    margin-bottom: 0.5em;
+    color: #000;
 }
 
-#thankyou ul.share li a img {
+#sns ul.share li a img {
+    vertical-align: middle;
+    margin-right: 10px;
     height: 30px;
     width: 30px;
 }
 
+/* Thankyou */
+#thankyou {
+    text-align: center;
+    margin: 2em 10px;
+}
 #thankyou .thank {
     padding: 0.5em;
     border-top: medium double #000;
     border-bottom: medium double #000;
-    font-size: 2em;
-    margin-bottom: 2em;
+    font-size: 1.5em;
 }
 
 
