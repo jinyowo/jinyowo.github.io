@@ -15,11 +15,9 @@
     });
 
     $(function () {
-
         var $window = $(window),
             $body = $('body'),
-            $header = $('#header'),
-            $all = $body.add($header);
+            $header = $('#header');
 
         // Disable animations/transitions until the page has loaded.
         $body.addClass('is-loading');
@@ -30,7 +28,15 @@
             }, 100);
         });
 
-        $('.back-top').on('click', function (e) {
+        $window.scroll(function () {
+            if ($(this).scrollTop() > window.innerHeight) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
+
+        $('#back-top').on('click', function (e) {
             e.preventDefault();
 
             $('html, body').animate({scrollTop: 0}, 400);
@@ -56,29 +62,22 @@
 
             $window
                 .on('resize.ie-flexbox-fix', function () {
-
                     clearTimeout(IEResizeTimeout);
 
                     IEResizeTimeout = setTimeout(function () {
-
                         var wh = $window.height();
 
                         $main.each(function () {
-
                             var $this = $(this);
 
                             $this.css('height', '');
-
                             if ($this.height() <= wh)
                                 $this.css('height', (wh - 50) + 'px');
 
                         });
-
                     });
-
                 })
                 .triggerHandler('resize.ie-flexbox-fix');
-
         }
 
         // Prioritize "important" elements on small.
@@ -91,7 +90,6 @@
 
         // Gallery.
         $window.on('load', function () {
-
             var $gallery = $('.gallery');
 
             $gallery.poptrox({
@@ -124,83 +122,56 @@
 
         // Section transitions.
         if (skel.canUse('transition')) {
-
             var on = function () {
 
                 // Galleries.
-                $('.gallery')
-                    .scrollex({
-                        top: '30vh',
-                        bottom: '30vh',
-                        delay: 0,
-                        initialize: function () {
-                            $(this).addClass('inactive');
-                        },
-                        terminate: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        enter: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        // leave:		function() { $(this).addClass('inactive'); }
-                    });
+                $('.gallery').scrollex({
+                    top: '30vh',
+                    bottom: '30vh',
+                    delay: 0,
+                    initialize: function () {
+                        $(this).addClass('inactive');
+                    },
+                    terminate: function () {
+                        $(this).removeClass('inactive');
+                    },
+                    enter: function () {
+                        $(this).removeClass('inactive');
+                    }
+                });
 
                 // Generic sections.
-                $('.main.style1')
-                    .scrollex({
-                        mode: 'middle',
-                        delay: 0,
-                        initialize: function () {
-                            $(this).addClass('inactive');
-                        },
-                        terminate: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        enter: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        // leave:		function() { $(this).addClass('inactive'); }
-                    });
+                $('.main.style1').scrollex({
+                    mode: 'middle',
+                    delay: 0,
+                    initialize: function () {
+                        $(this).addClass('inactive');
+                    },
+                    terminate: function () {
+                        $(this).removeClass('inactive');
+                    },
+                    enter: function () {
+                        $(this).removeClass('inactive');
+                    }
+                });
 
-                $('.main.style2')
-                    .scrollex({
-                        mode: 'middle',
-                        delay: 0,
-                        initialize: function () {
-                            $(this).addClass('inactive');
-                        },
-                        terminate: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        enter: function () {
-                            $(this).removeClass('inactive');
-                        },
-                        // leave:		function() { $(this).addClass('inactive'); }
-                    });
+                $('.main.style2').scrollex({
+                    mode: 'middle',
+                    delay: 0,
+                    initialize: function () {
+                        $(this).addClass('inactive');
+                    },
+                    terminate: function () {
+                        $(this).removeClass('inactive');
+                    },
+                    enter: function () {
+                        $(this).removeClass('inactive');
+                    }
+                });
 
             };
-
-            var off = function () {
-
-                // // Galleries.
-                // 	$('.gallery')
-                // 		.unscrollex();
-                //
-                // // Generic sections.
-                // 	$('.main.style1')
-                // 		.unscrollex();
-                //
-                // 	$('.main.style2')
-                // 		.unscrollex();
-            };
-
             skel.on('change', function () {
-
-                if (skel.breakpoint('small').active)
-                    (off)();
-                else
-                    (on)();
-
+                (on)();
             });
 
         }
@@ -212,31 +183,31 @@
 
         // // Events.
         // 	var resizeTimeout, resizeScrollTimeout;
-		//
+        //
         // 	$window
         // 		.resize(function() {
-		//
+        //
         // 			// Disable animations/transitions.
         // 				$body.addClass('is-resizing');
-		//
+        //
         // 			window.clearTimeout(resizeTimeout);
-		//
+        //
         // 			resizeTimeout = window.setTimeout(function() {
-		//
+        //
         // 				// Update scrolly links.
         // 					$('a[href^="#"]').scrolly({
         // 						speed: 1500,
         // 						offset: $header.outerHeight() - 1
         // 					});
-		//
+        //
         // 				// Re-enable animations/transitions.
         // 					window.setTimeout(function() {
         // 						$body.removeClass('is-resizing');
         // 						$window.trigger('scroll');
         // 					}, 0);
-		//
+        //
         // 			}, 100);
-		//
+        //
         // 		})
         // 		.load(function() {
         // 			$window.trigger('resize');
