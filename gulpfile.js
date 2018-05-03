@@ -7,7 +7,7 @@ var minifyhtml = require('gulp-minify-html');
 var rename = require('gulp-rename');
 
 var paths = {
-    js: 'src/assets/js/*.js',
+    js: 'src/assets/js',
     css: 'src/assets/css/*.css',
     html: 'src/assets/index.html'
 };
@@ -39,7 +39,12 @@ var paths = {
 // });
 
 gulp.task('release-js', function () {
-    return gulp.src(paths.js)
+    return gulp.src([
+            paths.js + '/util.js',
+            paths.js + '/map.js',
+            paths.js + '/sns.js',
+            paths.js + '/main.js'
+        ])
         .pipe(concat('script.min.js'))
         .pipe(uglify().on('error', gutil.log))
         .pipe(gulp.dest('assets/js'));
