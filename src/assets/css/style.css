@@ -1326,6 +1326,11 @@ body.is-touch .main {
     font-size: 110%;
 }
 
+#location .map-info .middle-line {
+    border-top: solid 1px #ccc;
+    margin-bottom: 1em;
+}
+
 /* sns */
 #sns {
     background-color: #f7f7f7;
@@ -1394,8 +1399,8 @@ body.is-touch .main {
     height: 5em;
     line-height: 5em;
     margin: 0;
-    background: #39454b;
-    color: rgba(185, 186, 187, 0.5);
+    background: #099268;
+    color: #ccc;
     overflow: hidden;
 }
 
@@ -1423,6 +1428,7 @@ body.is-touch .main {
 }
 
 #footer .back-top {
+    opacity: 0.5;
     cursor: pointer;
     display: none;
     position: fixed;

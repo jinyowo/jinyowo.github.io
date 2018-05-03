@@ -18,6 +18,7 @@ SnsShare.prototype = {
     init: function () {
         this._initialize();
         this._attachEvent();
+        this._initKakaoShare();
         this._initClipboardJS();
     },
 
@@ -32,6 +33,25 @@ SnsShare.prototype = {
         this.$kakaoShareBtn.on('click', $.proxy(this._onClickKakaoShareBtn, this));
         this.$lineShareBtn.on('click', $.proxy(this._onClickLineShareBtn, this));
         this.$URLCopyBtn.on('click', $.proxy(this._onClickURLCopyBtn, this));
+    },
+
+    _initKakaoShare: function () {
+        Kakao.init(this._kakaoKey);
+
+        Kakao.Link.createTalkLinkButton({
+            container: this._kakaoBtnId,
+            label: this._content,
+            image: {
+                src: this._imgSrc,
+                width: '800',
+                height: '533'
+            },
+            webButton: {
+                text: '모바일 초대장 연결',
+                url: this._link
+            },
+            installTalk: false
+        });
     },
 
     _initClipboardJS: function () {
@@ -59,22 +79,6 @@ SnsShare.prototype = {
      */
     _onClickKakaoShareBtn: function (e) {
         e.preventDefault();
-
-        Kakao.init(this._kakaoKey);
-
-        Kakao.Link.createTalkLinkButton({
-            container: this._kakaoBtnId,
-            label: this._content,
-            image: {
-                src: this._imgSrc,
-                width: '800',
-                height: '533'
-            },
-            webButton: {
-                text: '모바일 초대장 연결',
-                url: this._link
-            }
-        });
     },
 
     /**
