@@ -40,7 +40,7 @@ SnsShare.prototype = {
 
         Kakao.Link.createTalkLinkButton({
             container: this._kakaoBtnId,
-            label: this._content,
+            label: this._title + '\n' + this._content,
             image: {
                 src: this._imgSrc,
                 width: '800',
