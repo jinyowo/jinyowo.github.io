@@ -1190,7 +1190,7 @@ body.is-touch .main {
 /* Intro */
 #intro {
     background: url("images/overlay.png"), url("../images/main.jpg");
-    background-size: 256px 256px, cover;
+    background-size: auto 100%;
     background-position: top left, bottom center;
     background-repeat: repeat, no-repeat;
     background-attachment: fixed;
@@ -1524,81 +1524,10 @@ body.is-touch .main {
     text-decoration: none
 }
 
-.tooltipped-s:after, .tooltipped-se:after, .tooltipped-sw:after {
-    top: 100%;
-    right: 50%;
-    margin-top: 5px
-}
-
-.tooltipped-s:before, .tooltipped-se:before, .tooltipped-sw:before {
-    top: auto;
-    right: 50%;
-    bottom: -5px;
-    margin-right: -5px;
-    border-bottom-color: rgba(0, 0, 0, 0.8)
-}
-
-.tooltipped-se:after {
-    right: auto;
-    left: 50%;
-    margin-left: -15px
-}
-
-.tooltipped-sw:after {
-    margin-right: -15px
-}
-
-.tooltipped-n:after, .tooltipped-ne:after, .tooltipped-nw:after {
-    right: 50%;
-    bottom: 100%;
-    margin-bottom: 5px
-}
-
-.tooltipped-n:before, .tooltipped-ne:before, .tooltipped-nw:before {
-    top: -5px;
-    right: 50%;
-    bottom: auto;
-    margin-right: -5px;
-    border-top-color: rgba(0, 0, 0, 0.8)
-}
-
-.tooltipped-ne:after {
-    right: auto;
-    left: 50%;
-    margin-left: -15px
-}
-
-.tooltipped-nw:after {
-    margin-right: -15px
-}
-
-.tooltipped-s:after, .tooltipped-n:after {
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%)
-}
-
-.tooltipped-w:after {
-    right: 100%;
-    bottom: 50%;
-    margin-right: 5px;
-    -webkit-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    transform: translateY(50%)
-}
-
-.tooltipped-w:before {
-    top: 50%;
-    bottom: 50%;
-    left: -5px;
-    margin-top: -5px;
-    border-left-color: rgba(0, 0, 0, 0.8)
-}
-
 .tooltipped-e:after {
     bottom: 50%;
     left: 100%;
-    margin-left: 5px;
+    margin-left: 10px;
     -webkit-transform: translateY(50%);
     -ms-transform: translateY(50%);
     transform: translateY(50%)
@@ -1606,7 +1535,7 @@ body.is-touch .main {
 
 .tooltipped-e:before {
     top: 50%;
-    right: -5px;
+    right: -10px;
     bottom: 50%;
     margin-top: -5px;
     border-right-color: rgba(0, 0, 0, 0.8)
