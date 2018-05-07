@@ -217,7 +217,7 @@
             title: '[모바일 초대장] ',
             content: '조성훈&허진 결혼식에 초대합니다.',
             link: 'http://www.hunylovejiny.com',
-            imgSrc: 'http://www.hunylovejiny.com/assets/images/main.jpg',
+            imgSrc: 'http://hunylovejiny.com.s3-website.ap-northeast-2.amazonaws.com/assets/images/main.jpg',
             kakao: {
                 id: '#kakao-share-btn',
                 key: 'e0a3da945d985a84682babc289bbc413'
