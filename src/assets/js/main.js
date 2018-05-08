@@ -216,7 +216,7 @@
         var snsInfo = {
             title: '[모바일 초대장] ',
             content: '조성훈&허진 결혼식에 초대합니다.',
-            link: 'http://www.hunylovejiny.com',
+            link: 'http://hunylovejiny.com.s3-website.ap-northeast-2.amazonaws.com/',
             imgSrc: 'http://hunylovejiny.com.s3-website.ap-northeast-2.amazonaws.com/assets/images/main.jpg',
             kakao: {
                 id: '#kakao-share-btn',
