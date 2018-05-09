@@ -1208,6 +1208,13 @@ body.is-touch .main {
     margin: auto auto 6em;
 }
 
+@media screen and (max-height: 350px) {
+    #intro .content {
+        top: 0;
+        bottom: auto;
+    }
+}
+
 #intro .title {
     padding: 0.5em;
     border-top: medium double #fff;
