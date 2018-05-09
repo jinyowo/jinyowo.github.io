@@ -1211,7 +1211,7 @@ body.is-touch .main {
 @media screen and (max-height: 350px) {
     #intro .content {
         top: 0;
-        bottom: 0;
+        bottom: auto;
     }
 }
 
